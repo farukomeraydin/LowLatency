@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{4b8d2e71-9a3c-4f56-b0e2-7c1d5a9f3e84}</ProjectGuid>
+    <RootNamespace>LowLatencyTests</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Configuration)\obj\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <DisableSpecificWarnings>4324</DisableSpecificWarnings>
+      <AdditionalOptions>/w14062 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Common\Network.cpp" />
+    <ClCompile Include="src\Common\Thread.cpp" />
+    <ClCompile Include="tests\TestMain.cpp" />
+    <ClCompile Include="tests\TypesTests.cpp" />
+    <ClCompile Include="tests\MemoryPoolTests.cpp" />
+    <ClCompile Include="tests\LFQueueTests.cpp" />
+    <ClCompile Include="tests\ThreadLoggerTests.cpp" />
+    <ClCompile Include="tests\TcpTests.cpp" />
+    <ClCompile Include="tests\MulticastTests.cpp" />
+    <ClCompile Include="tests\ExchangeTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Common\Assert.h" />
+    <ClInclude Include="src\Common\LFQueue.h" />
+    <ClInclude Include="src\Common\Logger.h" />
+    <ClInclude Include="src\Common\MemoryPool.h" />
+    <ClInclude Include="src\Common\Multicast.h" />
+    <ClInclude Include="src\Common\Network.h" />
+    <ClInclude Include="src\Common\ReceiveBuffer.h" />
+    <ClInclude Include="src\Common\SendBuffer.h" />
+    <ClInclude Include="src\Common\TcpConnection.h" />
+    <ClInclude Include="src\Common\TcpServer.h" />
+    <ClInclude Include="src\Common\Thread.h" />
+    <ClInclude Include="src\Common\Time.h" />
+    <ClInclude Include="src\Common\Types.h" />
+    <ClInclude Include="src\Exchange\ClientRequest.h" />
+    <ClInclude Include="src\Exchange\ClientResponse.h" />
+    <ClInclude Include="src\Exchange\MarketUpdate.h" />
+    <ClInclude Include="src\Exchange\Order.h" />
+    <ClInclude Include="tests\Test.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

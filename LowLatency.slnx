@@ -1,0 +1,6 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="LowLatencyTests.vcxproj" Id="4b8d2e71-9a3c-4f56-b0e2-7c1d5a9f3e84" />
+</Solution>

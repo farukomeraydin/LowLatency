@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{B3E1C6A2-5D4F-4A8E-9C21-7F0D3E6A1B54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Exchange">
+      <UniqueIdentifier>{6D2A9F41-3C7E-4B85-A1D0-8E5F2B7C9A63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{9E4C1B7A-2F63-4D08-8A5B-3C6E0F1D2A97}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Common\Network.cpp"><Filter>Common</Filter></ClCompile>
+    <ClCompile Include="src\Common\Thread.cpp"><Filter>Common</Filter></ClCompile>
+    <ClCompile Include="tests\TestMain.cpp"><Filter>Tests</Filter></ClCompile>
+    <ClCompile Include="tests\TypesTests.cpp"><Filter>Tests</Filter></ClCompile>
+    <ClCompile Include="tests\MemoryPoolTests.cpp"><Filter>Tests</Filter></ClCompile>
+    <ClCompile Include="tests\LFQueueTests.cpp"><Filter>Tests</Filter></ClCompile>
+    <ClCompile Include="tests\ThreadLoggerTests.cpp"><Filter>Tests</Filter></ClCompile>
+    <ClCompile Include="tests\TcpTests.cpp"><Filter>Tests</Filter></ClCompile>
+    <ClCompile Include="tests\MulticastTests.cpp"><Filter>Tests</Filter></ClCompile>
+    <ClCompile Include="tests\ExchangeTests.cpp"><Filter>Tests</Filter></ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Common\Assert.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\Common\LFQueue.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\Common\Logger.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\Common\MemoryPool.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\Common\Multicast.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\Common\Network.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\Common\ReceiveBuffer.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\Common\SendBuffer.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\Common\TcpConnection.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\Common\TcpServer.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\Common\Thread.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\Common\Time.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\Common\Types.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\Exchange\ClientRequest.h"><Filter>Exchange</Filter></ClInclude>
+    <ClInclude Include="src\Exchange\ClientResponse.h"><Filter>Exchange</Filter></ClInclude>
+    <ClInclude Include="src\Exchange\MarketUpdate.h"><Filter>Exchange</Filter></ClInclude>
+    <ClInclude Include="src\Exchange\Order.h"><Filter>Exchange</Filter></ClInclude>
+    <ClInclude Include="tests\Test.h"><Filter>Tests</Filter></ClInclude>
+  </ItemGroup>
+</Project>
